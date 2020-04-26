@@ -1,0 +1,22 @@
+{
+    "name": "mavenbird/estimatedprofit",
+    "description": "Calculate Estimated Profit on Product grid",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "info@mavenbird.com",
+            "name": "Mavenbird Technologies"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Mavenbird\\EstimatedProfit\\": ""
+        }
+    }
+}

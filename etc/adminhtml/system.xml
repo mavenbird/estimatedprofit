@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="mavenbird" sortOrder="999" translate="label">
+			<label>Mavenbird</label>
+		</tab>
+		<section id="estimated_profit" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Estimated Profit</label>
+			<tab>mavenbird</tab>
+			<resource>Mavenbird_EstimatedProfit::config_mavenbird_estimatedprofit</resource>
+			<group id="profit" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Estimated Profit</label>
+				<field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
