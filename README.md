@@ -29,7 +29,7 @@ Installation
  - Install the module composer by running 
  ```
 composer config repositories.estimatedprofit git git@github.com:mavenbird/estimatedprofit 
-composer require mavenbird/estimatedprofit:dev-master
+composer require mavenbird/module-estimatedprofit:dev-master
 ```
  - enable the module by running `php bin/magento module:enable Mavenbird_EstimatedProfit`
  - apply database updates by running `php bin/magento setup:upgrade`
