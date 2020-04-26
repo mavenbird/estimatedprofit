@@ -1,15 +1,13 @@
-# Mage2 Module Mavenbird EstimatedProfit
+# Magento 2 Module - Mavenbird EstimatedProfit
 
     ``mavenbird/module-estimatedprofit``
 
- - [Main Functionalities](#markdown-header-main-functionalities)
- - [Installation](#markdown-header-installation)
- - [Configuration](#markdown-header-configuration)
- - [Specifications](#markdown-header-specifications)
- - [Attributes](#markdown-header-attributes)
-
 
 ## Main Functionalities
+* Add an extra column to the product grid in the backend called "Estimated Profit"
+* Estimated profit should be calculated as: (Sales price - Cost prise) X Qty in stock
+* if there is no cost price entered, then the estimated profit will be blank
+
 
 
 ## Installation
@@ -36,16 +34,4 @@
 
 
 ## Configuration
-
- - Enable (estimated_profit/profit/enable)
-
-
-## Specifications
-
-
-
-
-## Attributes
-
-
-
+* Enable (estimated_profit/profit/enable)
