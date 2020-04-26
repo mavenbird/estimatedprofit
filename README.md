@@ -35,6 +35,3 @@ composer require mavenbird/module-estimatedprofit:dev-master
  - apply database updates by running `php bin/magento setup:upgrade`
  - Flush the cache by running `php bin/magento cache:flush`
 
-Configuration
-------------
-* Enable (estimated_profit/profit/enable)
