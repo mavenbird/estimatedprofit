@@ -22,7 +22,6 @@ class EstimatedProfitField implements \Magento\Ui\DataProvider\AddFieldToCollect
             'at_estimated_profit.`entity_id` = e.`entity_id` AND at_estimated_profit.`attribute_id`=81',
             array('ROUND(((at_price.`value` - at_estimated_profit.`value`)*at_qty.`qty`),2) AS estimated_profit')
         );
-        
-        /*echo $collection->getSelect(); die;*/
+
     }
 }
