@@ -9,9 +9,9 @@ This module is developed for showing estimated profit on `catalog - products` se
 Main Functionalities -
 ----------------------
 
-* Add an extra column to the product grid in the backend called "Estimated Profit"
-* Estimated profit should be calculated as: (Sales price - Cost prise) X Qty in stock
-* if there is no cost price entered, then the estimated profit will be blank
+* Extra column added to the Catalog -> product grid in the backend called "Estimated Profit"
+* Estimated profit is calculated as: (Sales price - Cost prise) X Qty in stock
+* If there is no cost price entered, then the "Estimated profit" will be blank
 
 Installation
 ------------
