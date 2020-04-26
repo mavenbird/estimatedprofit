@@ -2,15 +2,19 @@
 
     ``mavenbird/module-estimatedprofit``
 
+Overview - 
+------------
+This module is developed for showing estimated profit on `catalog - products` section.
 
-## Main Functionalities
-* Add an extra column to the product grid in the backend called "Estimated Profit"
-* Estimated profit should be calculated as: (Sales price - Cost prise) X Qty in stock
-* if there is no cost price entered, then the estimated profit will be blank
+Main Functionalities -
+----------------------
 
+* Extra column added to the Catalog -> product grid in the backend called "Estimated Profit"
+* Estimated profit is calculated as: (Sales price - Cost prise) X Qty in stock
+* If there is no cost price entered, then the "Estimated profit" will be blank
 
-
-## Installation
+Installation
+------------
 \* = in production please use the `--keep-generated` option
 
 ### Type 1: Zip file
@@ -22,16 +26,15 @@
 
 ### Type 2: Composer
 
- - Make the module available in a composer repository for example:
-    - private repository `repo.magento.com`
-    - public repository `packagist.org`
-    - public github repository as vcs
- - Add the composer repository to the configuration by running `composer config repositories.repo.magento.com composer https://repo.magento.com/`
- - Install the module composer by running `composer require mavenbird/module-estimatedprofit`
+ - Install the module composer by running 
+ ```
+composer config repositories.estimatedprofit git git@github.com:mavenbird/estimatedprofit 
+composer require mavenbird/module-estimatedprofit:dev-master
+```
  - enable the module by running `php bin/magento module:enable Mavenbird_EstimatedProfit`
- - apply database updates by running `php bin/magento setup:upgrade`\*
+ - apply database updates by running `php bin/magento setup:upgrade`
  - Flush the cache by running `php bin/magento cache:flush`
 
-
-## Configuration
+Configuration
+------------
 * Enable (estimated_profit/profit/enable)
