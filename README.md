@@ -32,7 +32,7 @@ composer config repositories.estimatedprofit git git@github.com:mavenbird/estima
 composer require mavenbird/estimatedprofit:dev-master
 ```
  - enable the module by running `php bin/magento module:enable Mavenbird_EstimatedProfit`
- - apply database updates by running `php bin/magento setup:upgrade`\*
+ - apply database updates by running `php bin/magento setup:upgrade`
  - Flush the cache by running `php bin/magento cache:flush`
 
 Configuration
