@@ -1,0 +1,29 @@
+{
+    "name": "mavenbird/module-estimatedprofit",
+    "description": "The Estimated Profit module provides a streamlined way for store owners to calculate potential profits from their sales.",
+    "require": {
+        "php": ">=8.0.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+      "OSL-3.0",
+      "AFL-3.0"
+    ],
+    "authors": [
+        {
+          "name": "Mavenbird",
+          "email": "support@mavenbird.com",
+          "homepage": "https://www.mavenbird.com",
+          "role": "Technical Support"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4":  { 
+            "Mavenbird\\EstimatedProfit\\": ""
+        }
+    }
+  }
