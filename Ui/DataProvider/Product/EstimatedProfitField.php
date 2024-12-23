@@ -35,11 +35,11 @@ class EstimatedProfitField implements \Magento\Ui\DataProvider\AddFieldToCollect
 
     public function addField(\Magento\Framework\Data\Collection $collection, $field, $alias = null)
     {
-        $tableName = $this->connection->getTableName('catalog_product_entity_decimal');
+        $decimalTable = $this->resource->getTableName('catalog_product_entity_decimal');
         
         $collection->joinField(
             "price",
-            "catalog_product_entity_decimal",
+            $decimalTable,
             "value",
             "entity_id = entity_id",
             "at_price.attribute_id = 77",
@@ -47,7 +47,7 @@ class EstimatedProfitField implements \Magento\Ui\DataProvider\AddFieldToCollect
         );
 
         $collection->getSelect()->joinLeft(
-            ['at_estimated_profit' => $tableName],
+            ['at_estimated_profit' => $decimalTable],
             'at_estimated_profit.`entity_id` = e.`entity_id` AND at_estimated_profit.`attribute_id`=81',
             ['ROUND(((at_price.`value` - at_estimated_profit.`value`)*at_qty.`qty`),2) AS estimated_profit']
         );
