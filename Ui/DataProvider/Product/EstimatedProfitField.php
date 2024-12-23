@@ -25,15 +25,17 @@ use Magento\Framework\App\ResourceConnection;
 class EstimatedProfitField implements \Magento\Ui\DataProvider\AddFieldToCollectionInterface
 {
     private $resource;
+    private $connection;
 
-    public function __construct(ResourceConnection $resource)
+    public function __construct(ResourceConnection $resource) 
     {
         $this->resource = $resource;
+        $this->connection = $resource->getConnection();
     }
 
     public function addField(\Magento\Framework\Data\Collection $collection, $field, $alias = null)
     {
-        $tableName = $this->resource->getTableName('catalog_product_entity_decimal');
+        $tableName = $this->connection->getTableName('catalog_product_entity_decimal');
         
         $collection->joinField(
             "price",
