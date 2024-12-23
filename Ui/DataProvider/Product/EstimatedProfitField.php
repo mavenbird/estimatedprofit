@@ -36,20 +36,27 @@ class EstimatedProfitField implements \Magento\Ui\DataProvider\AddFieldToCollect
     public function addField(\Magento\Framework\Data\Collection $collection, $field, $alias = null)
     {
         $decimalTable = $this->resource->getTableName('catalog_product_entity_decimal');
-        
-        $collection->joinField(
-            "price",
-            $decimalTable,
-            "value",
-            "entity_id = entity_id",
-            "at_price.attribute_id = 77",
-            "left"
+        $stockItemTable = $this->resource->getTableName('cataloginventory_stock_item');
+
+        // Join for stock quantity
+        $collection->getSelect()->joinLeft(
+            ['stock_qty' => $stockItemTable], // Changed alias from 'at_qty' to 'stock_qty'
+            'stock_qty.product_id = e.entity_id AND stock_qty.stock_id = 1',
+            ['qty']
         );
 
+        // Join for price attribute
         $collection->getSelect()->joinLeft(
-            ['at_estimated_profit' => $decimalTable],
-            'at_estimated_profit.`entity_id` = e.`entity_id` AND at_estimated_profit.`attribute_id`=81',
-            ['ROUND(((at_price.`value` - at_estimated_profit.`value`)*at_qty.`qty`),2) AS estimated_profit']
+            ['product_price' => $decimalTable], // Changed alias from 'at_price' to 'product_price'
+            'product_price.entity_id = e.entity_id AND product_price.attribute_id = 77',
+            ['price' => 'product_price.value']
+        );
+
+        // Join for estimated profit attribute
+        $collection->getSelect()->joinLeft(
+            ['estimated_profit_attr' => $decimalTable], // Changed alias from 'at_estimated_profit' to 'estimated_profit_attr'
+            'estimated_profit_attr.entity_id = e.entity_id AND estimated_profit_attr.attribute_id = 81',
+            ['estimated_profit' => new \Zend_Db_Expr('ROUND(((product_price.value - estimated_profit_attr.value) * stock_qty.qty), 2)')]
         );
     }
 }
