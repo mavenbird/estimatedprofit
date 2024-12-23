@@ -20,22 +20,21 @@
  */
 namespace Mavenbird\EstimatedProfit\Ui\DataProvider\Product;
 
+use Magento\Framework\App\ResourceConnection;
+
 class EstimatedProfitField implements \Magento\Ui\DataProvider\AddFieldToCollectionInterface
 {
+    private $resource;
 
-    /**
-     * Add Fields
-     *
-     * @param \Magento\Framework\Data\Collection $collection
-     * @param mixed $field
-     * @param mixed $alias
-     * @return void
-     */
-    public function addField(
-        \Magento\Framework\Data\Collection $collection,
-        $field,
-        $alias = null
-    ) {
+    public function __construct(ResourceConnection $resource)
+    {
+        $this->resource = $resource;
+    }
+
+    public function addField(\Magento\Framework\Data\Collection $collection, $field, $alias = null)
+    {
+        $tableName = $this->resource->getTableName('catalog_product_entity_decimal');
+        
         $collection->joinField(
             "price",
             "catalog_product_entity_decimal",
@@ -46,7 +45,7 @@ class EstimatedProfitField implements \Magento\Ui\DataProvider\AddFieldToCollect
         );
 
         $collection->getSelect()->joinLeft(
-            ['at_estimated_profit'=>'catalog_product_entity_decimal'],
+            ['at_estimated_profit' => $tableName],
             'at_estimated_profit.`entity_id` = e.`entity_id` AND at_estimated_profit.`attribute_id`=81',
             ['ROUND(((at_price.`value` - at_estimated_profit.`value`)*at_qty.`qty`),2) AS estimated_profit']
         );
