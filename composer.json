@@ -1,22 +1,26 @@
 {
-    "name": "mavenbird/module-estimatedprofit",
-    "description": "Calculate Estimated Profit on Product grid",
+    "name": "mavenbird/module-estimate-profit",
+    "description": "Magento 2 module for estimating profit, providing admins with insights into product profitability.",
+    "require": {
+        "php": ">=8.0.0"
+    },
     "type": "magento2-module",
+    "version": "1.0.0",
     "license": "proprietary",
     "authors": [
         {
-            "email": "info@mavenbird.com",
-            "name": "Mavenbird Technologies"
+            "name": "Mavenbird",
+            "email": "support@mavenbird.com",
+            "homepage": "https://www.mavenbird.com",
+            "role": "Technical Support"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {},
     "autoload": {
         "files": [
             "registration.php"
         ],
-        "psr-4": {
-            "Mavenbird\\EstimatedProfit\\": ""
+        "psr-4":  { 
+            "Mavenbird\\EstimateProfit\\": ""
         }
     }
 }
