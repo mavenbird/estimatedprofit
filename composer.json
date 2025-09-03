@@ -2,10 +2,11 @@
     "name": "mavenbird/module-estimate-profit",
     "description": "Magento 2 module for estimating profit, providing admins with insights into product profitability.",
     "require": {
-        "php": ">=8.0.0"
+        "php": ">=8.0.0",
+        "mavenbird/module-core": "*"
     },
     "type": "magento2-module",
-    "version": "1.0.7",
+    "version": "1.1.0",
     "license": "proprietary",
     "authors": [
         {
