@@ -10,12 +10,12 @@
                 <label translate="true">Estimated Profit</label>
             </settings>
         </column>
-        <column name="cost" class="Magento\Catalog\Ui\Component\Listing\Columns\Price" sortOrder="120">
+        <!-- <column name="cost" class="Magento\Catalog\Ui\Component\Listing\Columns\Price" sortOrder="120">
             <settings>
                 <addField>true</addField>
                 <filter>textRange</filter>
                 <label translate="true">Cost</label>
             </settings>
-        </column>
+        </column> -->
     </columns>
 </listing>
